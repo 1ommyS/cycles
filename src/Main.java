@@ -114,12 +114,32 @@ public class Main {
         }
 
 
-        int m = 153232;
+        int startInterval = 1000;
+        int endInteval = 15000;
 
-        for (int delitel = 1; delitel <= m; delitel++) {
-            if (m % delitel == 0) {
-                System.out.println("Делитель:" + delitel);
+        int maxSumDeliteley = 0;
+        int chislo = 0;
+
+        for (int m = startInterval; m < endInteval; m++) {
+            int tekushayaSumaDeliteley = 0;
+
+            for (int delitel = 1; delitel <= m; delitel++) {
+                if (m % delitel == 0) {
+                    tekushayaSumaDeliteley += m;
+                }
+            }
+
+            if (tekushayaSumaDeliteley > maxSumDeliteley) {
+                maxSumDeliteley = tekushayaSumaDeliteley;
+                chislo = m;
             }
         }
+
+        System.out.println(maxSumDeliteley);
+        System.out.println(chislo);
+
+        // найти натуральное число из интверала от а до б с максимальной суммой делителей
+
+
     }
 }
